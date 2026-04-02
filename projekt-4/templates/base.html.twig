@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  {% block head %}   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Dagbok med Twig{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url("style.css") }}">
+  {% endblock %}
+</head>
+<body>
+
+  <header>
+    <h1>Dagbok med Twig</h1>
+    {% if username %}
+      Inloggad som {{ username }}
+    {% endif %}
+  </header>
+  <nav>
+    <a href="{{ url("index.php") }}">Start</a> <a href="{{ url("posts/posts.php") }}">Inlägg</a> <a href="login.php">Logga in</a>
+    {% if username %}
+      <a href="logout.php">Logga ut</a>
+    {% endif %}
+  </nav>
+  <main>
+    {% block main %}{% endblock %}
+  </main>
+
+</body>
+</html>

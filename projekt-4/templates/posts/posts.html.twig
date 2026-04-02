@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Inlägg{% endblock %}
+
+{% block main %}
+
+  {{ "now" | date() }}
+
+  {% for item in posts %}
+    <div>
+      <h3>{{ item.PostTitle }}</h3>
+      <p>{{ item.PostContent }}</p>
+      <p>
+        <i>Inlägg av {{ item.Username }} vid {{ item.PostTime | date("d/m-Y h:i") }}</i>
+      </p>
+    </div>
+  {% else %}
+    <div>
+      Du har inga inlägg.
+    </div>
+  {% endfor %}
+
+
+{% endblock %}
+
+
+

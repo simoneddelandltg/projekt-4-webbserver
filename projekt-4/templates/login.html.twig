@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+{% block main %}
+
+  <h2>Logga in</h2>
+
+  <form action="login-formhandler.php" method="POST">
+    <h3><label for="username">Username</label></h3>
+    <input id="username" type="text" name="username" required>
+  
+    <h3><label for="password">Password</label></h3>
+    <input id="password" type="password" name="password" required>   
+    <input type="submit" value="Logga in"> 
+  </form>
+
+  {% for item in messages %}
+    <p>{{ item }}</p>
+  {% endfor %}
+
+{% endblock %}
+
+
+
